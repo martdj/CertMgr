@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE database SYSTEM 'xmlschemas/domino_12_0_2.dtd'>
+<database xmlns='http://www.lotus.com/dxl' version='12.0' maintenanceversion='2.0'
+ replicaid='C125896D0E76E52A' path='CN=Demohub/OU=Srv/O=WWCorp!!certstore.nsf'
+ title='Certificate Store' fromtemplate='StdCertificateStore' maintainunread='false'
+ increasemaxfields='true' copyprofiledocswithdesign='true' showinopendialog='false'
+ advancedtemplate='true'>
+<databaseinfo dbid='C125896D0076E8AF' odsversion='55' diskspace='2359296'
+ percentused='89.7894965277778' numberofdocuments='24'><datamodified><datetime
+ dst='true'>20230410T111454,20+02</datetime></datamodified><designmodified
+><datetime dst='true'>20230327T165132,43+02</datetime></designmodified></databaseinfo>
+<launchsettings><noteslaunch whenopened='openframeset' frameset='MainFrameset'/></launchsettings>
+<document form='DnsProviderConfig'>
+<noteinfo noteid='932' unid='51BE72AE6DEBC849C125897F0051D714' sequence='3'>
+<created><datetime dst='true'>20230327T165354,76+02</datetime></created>
+<modified><datetime dst='true'>20230410T111454,20+02</datetime></modified>
+<revised><datetime dst='true'>20230410T111454,19+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20230410T111454,19+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20230327T165354,86+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Super Admin/O=WWCorp</name></updatedby>
+<revisions><datetime dst='true'>20230327T165354,86+02</datetime><datetime
+ dst='true'>20230327T165432,23+02</datetime></revisions>
+<item name='Body'><richtext>
+<pardef id='1' leftmargin='0' keepwithnext='true' keeptogether='true'/>
+<par def='1'><run><font size='9pt' name='Helvetica Neue' pitch='variable'
+ truetype='false' familyid='20'/>Check the API at </run><urllink showborder='false'
+ href='https://desec.readthedocs.io/en/latest/'><run><font size='9pt' name='Helvetica Neue'
+ pitch='variable' truetype='false' familyid='20' color='system'/>https://desec.readthedocs.io/en/latest/</run></urllink><run
+><font size='9pt' name='Helvetica Neue' pitch='variable' truetype='false'
+ familyid='20'/></run></par>
+<par def='1'><run><font name='Helvetica Neue' pitch='variable' truetype='false'
+ familyid='20'/>The details about this DNS Configuration can be found in this blog article</run><urllink
+ showborder='false' href='https://blog.martdj.nl/2023/04/03/how-to-create-a-dns-configuration'
+ regionid='1'><run><font style='underline' name='Helvetica Neue' pitch='variable'
+ truetype='false' familyid='20' color='system'/></run></urllink></par>
+<par def='1'><region regionid='1' end='true'><run><font style='underline'
+ name='Helvetica Neue' pitch='variable' truetype='false' familyid='20' color='system'/>https://blog.martdj.nl/2023/04/03/how-to-create-a-dns-configuration</run></region><run
+><font style='underline' name='Helvetica Neue' pitch='variable' truetype='false'
+ familyid='20' color='blue'/></run></par>
+<par def='1'><run><font style='underline' name='Helvetica Neue' pitch='variable'
+ truetype='false' familyid='20' color='blue'/></run></par>
+<par def='1'><run><font name='Helvetica Neue' pitch='variable' truetype='false'
+ familyid='20'/>To create a DNS TXT record:</run></par>
+<pardef id='2' leftmargin='0' tabs='L0.5000in L1in L1.5000in L2in L2.5000in L3in L3.5000in L4in'
+ keepwithnext='true' keeptogether='true'/>
+<par def='2'><run><font name='Helvetica Neue' pitch='variable' truetype='false'
+ familyid='20'/>curl -X POST </run><run><font name='Helvetica Neue' pitch='variable'
+ truetype='false' familyid='20'/>https://desec.io/api/v1/domains/</run><run
+><font name='Helvetica Neue' pitch='variable' truetype='false' familyid='20'/>{name}/rrsets/ \</run></par>
+<par def='2'><run><font name='Helvetica Neue' pitch='variable' truetype='false'
+ familyid='20'/>    --header "Authorization: Token {secret}" \</run></par>
+<par def='2'><run><font name='Helvetica Neue' pitch='variable' truetype='false'
+ familyid='20'/>    --header "Content-Type: application/json" --data @- &lt;&lt;&lt; \</run></par>
+<par def='2'><run><font name='Helvetica Neue' pitch='variable' truetype='false'
+ familyid='20'/>    '{"subname": "{acme_challenge_name}", "type": "TXT", "ttl": 360, "records": ["\"{acme_challenge_token}\""]}'</run></par>
+<par def='2'><run><font name='Helvetica Neue' pitch='variable' truetype='false'
+ familyid='20'/></run></par>
+<par def='2'><run><font name='Helvetica Neue' pitch='variable' truetype='false'
+ familyid='20'/>To delete a DNS TXT record:</run></par>
+<par def='2'><run><font name='Helvetica Neue' pitch='variable' truetype='false'
+ familyid='20'/>curl -X DELETE </run><run><font name='Helvetica Neue' pitch='variable'
+ truetype='false' familyid='20'/>https://desec.io/api/v1/domains/</run><run
+><font name='Helvetica Neue' pitch='variable' truetype='false' familyid='20'/>{name}/rrsets/{acme_challenge_name}/TXT \</run></par>
+<par def='2'><run><font name='Helvetica Neue' pitch='variable' truetype='false'
+ familyid='20'/>     --header "Authorization: Token {secret}"</run></par>
+<par def='2'><run><font size='9pt' name='Helvetica Neue' pitch='variable'
+ truetype='false' familyid='20'/></run></par>
+<par def='2'><run><font size='9pt' name='Helvetica Neue' pitch='variable'
+ truetype='false' familyid='20'/>This DNS Configuration can be used with CNAME delegation by entering the correct name for the TXT record in the Custom value-field of your DNS Provider. See </run><urllink
+ showborder='false' href='https://blog.martdj.nl/2023/04/09/dns-configurations-and-cname-delegation/'><run
+><font size='9pt' name='Helvetica Neue' pitch='variable' truetype='false'
+ familyid='20' color='system'/>https://blog.martdj.nl/2023/04/09/dns-configurations-and-cname-delegation/</run></urllink><run
+><font size='9pt' name='Helvetica Neue' pitch='variable' truetype='false'
+ familyid='20'/></run></par></richtext></item>
+<item name='DnsProviderType'><text>H</text></item>
+<item name='cfg_DnsProviderDelay'><number>60</number></item>
+<item name='EnableTracing'><text>1</text></item>
+<item name='ReqLookupHttpType'><text/></item>
+<item name='ReqQryAddHttpType'><text>D</text></item>
+<item name='ReqAddHttpType'><text>P</text></item>
+<item name='ReqQryDelHttpType'><text/></item>
+<item name='ReqDelHttpType'><text>D</text></item>
+<item name='Comments'><richtext>
+<pardef id='3' keepwithnext='true' keeptogether='true'><code event='hidewhen'
+ enabled='false'><formula>FP_Server_Scope = "1"</formula></code></pardef>
+<par def='3'><run><font size='9pt' name='Helvetica Neue' pitch='variable'
+ truetype='false' familyid='20'/></run></par></richtext></item>
+<item name='AdminAccess' authors='true' names='true' protected='true'><text
+>[Administrator]</text></item>
+<item name='DnsProviderConfigName'><text>deSec with CNAME Delegation</text></item>
+<item name='ProviderName'><text>deSec</text></item>
+<item name='Website'><text>https://desec.io</text></item>
+<item name='DocumentationURL'><text>https://desec.readthedocs.io/en/latest/dns</text></item>
+<item name='Version'><text>1.0</text></item>
+<item name='Author'><text>Martijn de Jong</text></item>
+<item name='ReferenceURL'><text>https://desec.io/</text></item>
+<item name='StatusFormula'><text>ret_AddStatus</text></item>
+<item name='cfg_URL'><text>https://desec.io/api/v1</text></item>
+<item name='ReqLookupUrlFormula'><text/></item>
+<item name='ReqLookupHeaderFormula'><text/></item>
+<item name='ReqLookupPostDataFormula'><text/></item>
+<item name='ReqLookupCustomFormula'><text/></item>
+<item name='ReqQryAddUrlFormula'><text>cfg_URL + "/domains/" + cfg_DnsZone +"/rrsets/" + @if(cfg_CustomValue="";@Left(param_DnsTxtName;"." + cfg_DnsZone);cfg_CustomValue) + "/TXT/"</text></item>
+<item name='ReqQryAddHeaderFormula'><text>("Authorization: Token " + cfg_AuthToken ) : ( "Content-Type: application/json" )</text></item>
+<item name='ReqQryAddPostDataFormula'><text/></item>
+<item name='ReqAddUrlFormula'><text>cfg_URL + "/domains/" + cfg_DnsZone +"/rrsets/"</text></item>
+<item name='ReqAddHeaderFormula'><text>("Authorization: Token " + cfg_AuthToken ) : ( "Content-Type: application/json" )</text></item>
+<item name='ReqAddPostDataFormula'><text>"{" + { "subname": "} + @if(cfg_CustomValue="";@Left(param_DnsTxtName;"." + cfg_DnsZone);cfg_CustomValue) + {","type": "TXT","ttl": 120,"records":["\\"} + param_DnsTxtValue + {\\""]} + "}"</text></item>
+<item name='ReqQryDelUrlFormula'><text/></item>
+<item name='ReqQryDelHeaderFormula'><text/></item>
+<item name='ReqQryDelPostDataFormula'><text/></item>
+<item name='ReqDelUrlFormula'><text>cfg_URL + "/domains/" + cfg_DnsZone +"/rrsets/" + @if(cfg_CustomValue="";@Left(param_DnsTxtName;"." + cfg_DnsZone);cfg_CustomValue) + "/TXT/"</text></item>
+<item name='ReqDelHeaderFormula'><text>("Authorization: Token " + cfg_AuthToken ) : ( "Content-Type: application/json" )</text></item>
+<item name='ReqDelPostDataFormula'><text/></item>
+<item name='CommandAddFormula'><text/></item>
+<item name='CommandDelFormula'><text/></item>
+<item name='CommandEnvFormula'><text/></item>
+<item name='AgentDatabase'><text/></item>
+<item name='AgentAddName'><text/></item>
+<item name='AgentDelName'><text/></item></document>
+</database>
+
