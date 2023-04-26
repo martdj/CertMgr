@@ -34,11 +34,11 @@
  familyid='20'/></run></par>
 <par def='1'><run><font name='Helvetica Neue' pitch='variable' truetype='false'
  familyid='20'/>The details about this DNS Configuration can be found in this blog article</run><urllink
- showborder='false' href='https://blog.martdj.nl/2023/04/03/how-to-create-a-dns-configuration'
+ showborder='false' href='https://blog.martdj.nl/2023/04/23/how-to-create-a-dns-configuration'
  regionid='1'><run><font style='underline' name='Helvetica Neue' pitch='variable'
  truetype='false' familyid='20' color='system'/></run></urllink></par>
 <par def='1'><region regionid='1' end='true'><run><font style='underline'
- name='Helvetica Neue' pitch='variable' truetype='false' familyid='20' color='system'/>https://blog.martdj.nl/2023/04/03/how-to-create-a-dns-configuration</run></region><run
+ name='Helvetica Neue' pitch='variable' truetype='false' familyid='20' color='system'/>https://blog.martdj.nl/2023/04/23/how-to-create-a-dns-configuration</run></region><run
 ><font style='underline' name='Helvetica Neue' pitch='variable' truetype='false'
  familyid='20' color='blue'/></run></par>
 <par def='1'><run><font style='underline' name='Helvetica Neue' pitch='variable'
